@@ -1,0 +1,10 @@
+Node* reverse_list(Node* head) {
+	if (head ==nullptr|| head->next==nullptr)
+		return head;
+	Node* curr1 = head;
+	Node* next_next = curr1->next->next;
+	Node* list1 = curr1->next;
+	list1->next = curr1;
+	curr1->next = reverse_list(next_next);
+	return list1;
+}
